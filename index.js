@@ -20,6 +20,7 @@ class Hello extends Component {
 				<h2>{this.state.name}</h2>
 				<Another some={this.handleIt.bind(this)} word={this.state.name} />
 				<button onClick={()=>{this.setState({name: "ZERO"})} } type="submit">Deeffff</button>
+				<SomeOther word={this.state.name} some={this.handleIt.bind(this)} />
 			</div>
 
 	)}
@@ -35,6 +36,21 @@ class Another extends Component {
 	render() {
 		return (
 			<div>
+				<input value={this.props.word} onChange={e => this.props.some(e.target.value) } />
+			</div>
+		)
+	}
+}
+
+class SomeOther extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div>
+				<br/>
 				<input value={this.props.word} onChange={e => this.props.some(e.target.value) } />
 			</div>
 		)
