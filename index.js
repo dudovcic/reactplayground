@@ -6,7 +6,7 @@ class Hello extends Component {
 		super(props);
 
 		this.state = {
-			name: "State name"
+			name: "Saaaaaaaatate name"
 		};
 	}
 
